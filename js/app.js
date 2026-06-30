@@ -49,3 +49,29 @@ input.addEventListener("keydown", (event) => {
     }
 
 });
+
+import { loadChatHistory } from "./chat.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadChatHistory();
+
+});
+
+import { clearMessages } from "./storage.js";
+
+export function clearChat() {
+
+    messages = [];
+
+    clearMessages();
+
+    location.reload();
+
+}
+
+import { clearChat } from "./chat.js";
+
+const clearButton = document.getElementById("clearChatBtn");
+
+clearButton.addEventListener("click", clearChat);

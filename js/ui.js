@@ -52,11 +52,8 @@ export function addMessage(text, sender) {
         </div>
 
         <div class="message-content">
-
             <p>${text}</p>
-
             <span class="time">${getCurrentTime()}</span>
-
         </div>
     `;
 
@@ -64,4 +61,6 @@ export function addMessage(text, sender) {
 
     scrollToBottom(chatContainer);
 
-}   
+    return message;
+
+}
