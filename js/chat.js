@@ -1,9 +1,19 @@
-import { addMessage } from "./ui.js";
+import { addMessage, showTyping, removeTyping } from "./ui.js";
 
-export function sendUserMessage(message) {
+import { askGemini } from "./api.js";
 
-    if (!message.trim()) return;
+export async function sendUserMessage(message){
 
-    addMessage(message, "user");
+    if(!message.trim()) return;
+
+    addMessage(message,"user");
+
+    showTyping();
+
+    const response = await askGemini(message);
+
+    removeTyping();
+
+    addMessage(response,"bot");
 
 }

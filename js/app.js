@@ -1,29 +1,21 @@
-import { sendUserMessage } from "./chat.js";
+function send(){
 
-const input = document.getElementById("messageInput");
+    const text = input.value.trim();
 
-const sendButton = document.getElementById("sendBtn");
+    if(text==="") return;
 
-function send() {
+    sendUserMessage(text);
 
-    const message = input.value;
+    input.value="";
 
-    sendUserMessage(message);
-
-    input.value = "";
+    input.style.height="auto";
 
 }
 
-sendButton.addEventListener("click", send);
+input.addEventListener("input",()=>{
 
-input.addEventListener("keydown", (event) => {
+    input.style.height="auto";
 
-    if (event.key === "Enter" && !event.shiftKey) {
-
-        event.preventDefault();
-
-        send();
-
-    }
+    input.style.height=input.scrollHeight+"px";
 
 });

@@ -91,3 +91,23 @@
     color:var(--text-secondary);
 
 }
+
+.message-content p{
+
+    line-height:1.6;
+
+    white-space:pre-wrap;
+
+}
+
+.message.bot .message-content{
+
+    background:var(--surface);
+
+}
+
+.message.user .message-content{
+
+    background:var(--primary-color);
+
+}

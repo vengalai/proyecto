@@ -1,29 +1,37 @@
-import { getCurrentTime, scrollToBottom } from "./utils.js";
+let typingMessage = null;
 
-const chatContainer = document.getElementById("chatMessages");
+export function showTyping() {
 
-export function addMessage(text, sender) {
+    typingMessage = document.createElement("div");
 
-    const message = document.createElement("div");
+    typingMessage.className = "message bot";
 
-    message.classList.add("message", sender);
+    typingMessage.innerHTML = `
 
-    message.innerHTML = `
-        <div class="avatar">
-            ${sender === "user" ? "👤" : "🤖"}
-        </div>
+        <div class="avatar">🤖</div>
 
         <div class="message-content">
 
-            <p>${text}</p>
-
-            <span class="time">${getCurrentTime()}</span>
+            <p>Typing...</p>
 
         </div>
+
     `;
 
-    chatContainer.appendChild(message);
+    chatContainer.appendChild(typingMessage);
 
     scrollToBottom(chatContainer);
+
+}
+
+export function removeTyping() {
+
+    if(typingMessage){
+
+        typingMessage.remove();
+
+        typingMessage = null;
+
+    }
 
 }
