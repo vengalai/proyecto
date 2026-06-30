@@ -1,0 +1,40 @@
+:root{
+
+    /* ===== Colors ===== */
+
+    --primary-color:#2563eb;
+    --primary-hover:#1d4ed8;
+
+    --background:#0f172a;
+    --surface:#1e293b;
+    --surface-light:#334155;
+
+    --user-message:#2563eb;
+    --bot-message:#1e293b;
+
+    --text:#f8fafc;
+    --text-secondary:#94a3b8;
+
+    --border:#334155;
+
+    --success:#22c55e;
+    --danger:#ef4444;
+
+    /* ===== Fonts ===== */
+
+    --font-family:'Segoe UI',sans-serif;
+
+    /* ===== Radius ===== */
+
+    --radius:16px;
+
+    /* ===== Shadows ===== */
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.35);
+
+    /* ===== Transition ===== */
+
+    --transition:.25s ease;
+
+}
